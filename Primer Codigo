@@ -101,18 +101,10 @@
     <header class="bg-arena/95 backdrop-blur-md sticky top-0 z-40 border-b border-terracota/10 shadow-sm transition-all duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
             
-            <!-- LOGOTIPO ÉTNICO CON ICONO PERFIL DE MUJER AFROCOLOMBIANA SVG -->
+            <!-- LOGOTIPO ÉTNICO CON ICONO VECTORIAL PERFIL DE MUJER AFROCOLOMBIANA -->
             <a href="#inicio" class="flex items-center gap-3 group focus:outline-none" aria-label="Ir a inicio de FisioConciencia Femenina">
-                <div class="w-12 h-12 rounded-full bg-verde-pacifico flex items-center justify-center text-oro-brillo shadow-md group-hover:scale-105 transition-transform duration-200 border-2 border-oro-ancestral overflow-hidden p-1">
-                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <circle cx="50" cy="50" r="46" fill="#FFF9E6"/>
-                        <circle cx="50" cy="50" r="42" stroke="#D99B26" stroke-width="1.5" stroke-dasharray="3 3"/>
-                        <path d="M 30 35 C 20 25 22 10 38 12 C 48 8 64 12 68 24 C 74 28 78 40 70 50 C 68 54 64 58 60 60 Z" fill="#1C1C1E"/>
-                        <path d="M 34 36 C 40 24 58 24 64 34 C 58 40 46 40 34 36 Z" fill="#D99B26"/>
-                        <path d="M 32 40 C 43 44 56 42 66 36 C 62 46 44 48 32 40 Z" fill="#8C4E2D"/>
-                        <path d="M 38 44 C 40 48 44 49 46 52 C 44 53 42 54 43 56 C 45 57 49 57 50 58 C 46 60 44 64 47 68 C 50 72 56 73 60 72 C 58 78 52 82 44 84 L 38 87 C 36 80 35 70 36 60 Z" fill="#8C4E2D"/>
-                        <circle cx="56" cy="64" r="5" stroke="#F4C447" stroke-width="2.5" fill="none"/>
-                    </svg>
+                <div class="w-12 h-12 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-200 border-2 border-oro-ancestral shrink-0 bg-oro-suave">
+                    <img src="./assets/afro_woman_logo.png" alt="Logotipo FisioConciencia Femenina - Perfil de mujer afrocolombiana" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
                     <span class="font-titulo font-extrabold text-lg tracking-tight text-terracota leading-tight group-hover:text-verde-pacifico transition-colors">FisioConciencia</span>
@@ -215,7 +207,7 @@
                     </div>
                 </div>
 
-                <!-- ILUSTRACIÓN Y SECCIÓN DE TARJETA SIN NINGUNA SUPERPOSICIÓN O SOLAPAMIENTO -->
+                <!-- ILUSTRACIÓN Y SECCIÓN DE TARJETA CON MAQUETACIÓN LIMPIA -->
                 <div class="lg:col-span-5 fade-in-up">
                     <div class="relative max-w-md mx-auto">
                         <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-terracota via-oro-ancestral to-verde-pacifico opacity-35 blur-xl transform rotate-2"></div>
@@ -225,7 +217,7 @@
                             <div class="relative aspect-square sm:aspect-[4/4.2] rounded-2xl overflow-hidden bg-oro-suave border border-terracota/10">
                                 <img src="./assets/afrocolombiana_portrait.png" alt="Tres generaciones de mujeres afrocolombianas en perfil con turbantes tradicionales, aureola dorada y vegetación tropical" class="w-full h-full object-cover">
                                 
-                                <!-- BADGE DE IMPACTO UBICADO EN LA PARTE SUPERIOR DERECHA DE LA IMAGEN (SIN NINGUNA INTERSECCIÓN CON TEXTO) -->
+                                <!-- BADGE DE IMPACTO UBICADO EN LA PARTE SUPERIOR DERECHA -->
                                 <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md border-2 border-verde-pacifico rounded-xl p-2.5 shadow-lg flex items-center gap-2.5">
                                     <div class="w-9 h-9 rounded-full bg-verde-hoja flex items-center justify-center text-verde-pacifico font-titulo font-bold text-base shrink-0">
                                         <svg class="w-5 h-5 text-verde-pacifico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -294,16 +286,8 @@
 
                 <!-- PILAR 3 CON ICONO VECTORIAL DE MUJER AFRO EN PERFIL -->
                 <div class="bg-arena border-2 border-oro-ancestral/40 rounded-2xl p-8 hover:border-oro-ancestral transition-all duration-300 shadow-sm hover:shadow-md fade-in-up group">
-                    <div class="w-14 h-14 rounded-2xl bg-oro-ancestral text-terracota-oscura flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md overflow-hidden p-1.5">
-                        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="50" cy="50" r="46" fill="#FFF9E6"/>
-                            <circle cx="50" cy="50" r="42" stroke="#8C4E2D" stroke-width="2" stroke-dasharray="3 3"/>
-                            <path d="M 30 35 C 20 25 22 10 38 12 C 48 8 64 12 68 24 C 74 28 78 40 70 50 C 68 54 64 58 60 60 Z" fill="#1C1C1E"/>
-                            <path d="M 34 36 C 40 24 58 24 64 34 C 58 40 46 40 34 36 Z" fill="#8C4E2D"/>
-                            <path d="M 32 40 C 43 44 56 42 66 36 C 62 46 44 48 32 40 Z" fill="#D99B26"/>
-                            <path d="M 38 44 C 40 48 44 49 46 52 C 44 53 42 54 43 56 C 45 57 49 57 50 58 C 46 60 44 64 47 68 C 50 72 56 73 60 72 Z" fill="#8C4E2D"/>
-                            <circle cx="56" cy="64" r="5" stroke="#F4C447" stroke-width="2.5" fill="none"/>
-                        </svg>
+                    <div class="w-14 h-14 rounded-2xl bg-oro-suave border-2 border-oro-ancestral overflow-hidden p-1 shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <img src="./assets/afro_woman_logo.png" alt="Icono de mujer afrocolombiana de perfil" class="w-full h-full object-cover rounded-xl">
                     </div>
                     <h3 class="text-xl font-titulo font-bold text-terracota mb-3">Identidad y Matronato Afro</h3>
                     <p class="text-sm text-ebano leading-relaxed font-cuerpo">
@@ -319,7 +303,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-around items-center gap-8 text-center">
                 <div class="flex items-center gap-4 bg-white/10 px-6 py-4 rounded-2xl border border-white/20 backdrop-blur-sm">
-                    <div class="w-12 h-12 rounded-full bg-white text-terracota font-titulo font-black text-xl flex items-center justify-center">UV</div>
+                    <div class="w-12 h-12 rounded-full bg-white text-terracota font-titulo font-black text-xl flex items-center justify-center shadow">UV</div>
                     <div class="text-left">
                         <p class="font-titulo font-bold text-sm text-oro-brillo">Universidad del Valle</p>
                         <p class="text-xs text-white/80">Facultad de Salud &bull; Medicina y Cirugía</p>
@@ -327,7 +311,7 @@
                 </div>
 
                 <div class="flex items-center gap-4 bg-white/10 px-6 py-4 rounded-2xl border border-white/20 backdrop-blur-sm">
-                    <div class="w-12 h-12 rounded-full bg-oro-brillo text-terracota-oscura font-titulo font-black text-xl flex items-center justify-center">IC</div>
+                    <div class="w-12 h-12 rounded-full bg-oro-brillo text-terracota-oscura font-titulo font-black text-xl flex items-center justify-center shadow">IC</div>
                     <div class="text-left">
                         <p class="font-titulo font-bold text-sm text-oro-brillo">ICETEX - Fondo Comunidades Negras</p>
                         <p class="text-xs text-white/80">Apoyo a Investigaciones de Impacto Social</p>
@@ -335,7 +319,7 @@
                 </div>
 
                 <div class="flex items-center gap-4 bg-white/10 px-6 py-4 rounded-2xl border border-white/20 backdrop-blur-sm">
-                    <div class="w-12 h-12 rounded-full bg-verde-pacifico text-oro-brillo font-titulo font-black text-xl flex items-center justify-center">JM</div>
+                    <div class="w-12 h-12 rounded-full bg-verde-pacifico text-oro-brillo font-titulo font-black text-xl flex items-center justify-center shadow">JM</div>
                     <div class="text-left">
                         <p class="font-titulo font-bold text-sm text-oro-brillo">Alcaldía de Jamundí</p>
                         <p class="text-xs text-white/80">San Isidro, Robles y Territorio Rural</p>
@@ -360,7 +344,7 @@
                     <div class="bg-white border-2 border-dashed border-verde-pacifico p-6 rounded-2xl shadow-sm space-y-2">
                         <span class="text-xs font-titulo font-bold text-verde-pacifico uppercase tracking-wider block">Pregunta de Investigación Social:</span>
                         <p class="italic text-terracota font-titulo font-medium text-sm sm:text-base">
-                            "¿Cómo fortalece el recognition anatómico y la conexión mente-cuerpo la autonomía corporal y alfabetización en salud de niñas y adolescentes afrocolombianas en Jamundí?"
+                            "¿Cómo fortalece el reconocimiento anatómico y la conexión mente-cuerpo la autonomía corporal y alfabetización en salud de niñas y adolescentes afrocolombianas en Jamundí?"
                         </p>
                     </div>
                 </div>
@@ -368,7 +352,7 @@
                 <div class="lg:col-span-6 bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-terracota/10 fade-in-up">
                     <h3 class="text-2xl font-titulo font-bold text-verde-pacifico mb-6 flex items-center gap-3">
                         <svg class="w-7 h-7 text-oro-ancestral" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
                         </svg>
                         <span>Objetivos Estratégicos</span>
                     </h3>
@@ -544,14 +528,8 @@
                 
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-verde-pacifico flex items-center justify-center text-oro-brillo font-titulo font-bold overflow-hidden p-1">
-                            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="46" fill="#FFF9E6"/>
-                                <path d="M 30 35 C 20 25 22 10 38 12 C 48 8 64 12 68 24 C 74 28 78 40 70 50 C 68 54 64 58 60 60 Z" fill="#1C1C1E"/>
-                                <path d="M 34 36 C 40 24 58 24 64 34 C 58 40 46 40 34 36 Z" fill="#D99B26"/>
-                                <path d="M 38 44 C 40 48 44 49 46 52 C 44 53 42 54 43 56 C 45 57 49 57 50 58 C 46 60 44 64 47 68 C 50 72 56 73 60 72 Z" fill="#8C4E2D"/>
-                                <circle cx="56" cy="64" r="5" stroke="#F4C447" stroke-width="2.5" fill="none"/>
-                            </svg>
+                        <div class="w-10 h-10 rounded-full overflow-hidden shadow border-2 border-oro-ancestral shrink-0 bg-oro-suave">
+                            <img src="./assets/afro_woman_logo.png" alt="Logotipo FisioConciencia Femenina" class="w-full h-full object-cover">
                         </div>
                         <h4 class="font-titulo font-bold text-lg text-oro-brillo">FisioConciencia Femenina</h4>
                     </div>

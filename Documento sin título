@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioconciencia Femenina | Identidad Vectorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&family=Montserrat+Alternates:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tierra: '#8C5A2F',
+                        'tierra-oscura': '#7B4A26',
+                        'tierra-clara': '#FFF8F0',
+                        verde: '#2E7D32',
+                        'verde-claro': '#E8F5E9',
+                        dorado: '#F9A825',
+                        'dorado-palido': '#FFF9E6',
+                        blancoroto: '#FAFAFA',
+                        piedra: '#4A4A4A',
+                        indigo: '#3949AB',
+                        coral: '#E57373'
+                    },
+                    fontFamily: {
+                        titulo: ['"Montserrat Alternates"', 'sans-serif'],
+                        cuerpo: ['"Libre Franklin"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            background-color: #FAFAFA;
+            color: #4A4A4A;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .font-titulo {
+            font-family: 'Montserrat Alternates', sans-serif;
+        }
+
+        .mola-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23F9A825' stroke-width='1' opacity='0.05'/%3E%3Cpath d='M20 10L30 20L20 30L10 20Z' fill='none' stroke='%232E7D32' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .hero-vector-bg {
+            background: linear-gradient(to bottom, #FAFAFA 0%, #E8F5E9 100%);
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 3px solid #2E7D32;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .masonry { column-count: 3; column-gap: 1em; }
+        .masonry-item { display: inline-block; margin: 0 0 1em 0; width: 100%; }
+        @media (max-width: 991px) { .masonry { column-count: 2; } }
+        @media (max-width: 767px) { .masonry { column-count: 1; } }
+
+        .card-focus { transition: all 0.2s ease-in-out; }
+        .card-focus:hover {
+            transform: scale(1.03);
+            background-color: #E8F5E9;
+        }
+        .card-focus:hover h3, .card-focus:hover p { color: white; }
+        
+        .envelope-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .envelope-card:hover {
+            transform: translateY(-4px) rotate(0deg) !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active { display: block; }
+        .tab-content { display: none; animation: slideIn 0.3s ease-out; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+            .fade-in-up { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body class="antialiased mola-texture">
+
+    <div class="h-1 bg-indigo w-full fixed top-0 z-50"></div>
+    
+    <header class="bg-tierra shadow-md sticky top-1 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#inicio" class="flex items-center space-x-3 text-white">
+                <svg class="h-10 w-10 text-verde" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Ícono de latido de corazón">
+                    <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    <path d="M3.75 12h4.5l1.5-3 3 6 1.5-3h6" stroke="#F9A825" stroke-width="2" />
+                </svg>
+                <span class="font-titulo font-bold text-lg hidden sm:block tracking-wide">FisioConciencia Femenina</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-titulo font-semibold uppercase tracking-wide items-center">
+                <a href="#inicio" class="text-white hover:text-dorado transition">Inicio</a>
+                <a href="#sobre-proyecto" class="text-white hover:text-dorado transition">Proyecto</a>
+                <a href="#metodologia" class="text-white hover:text-dorado transition">Metodología</a>
+                <a href="#recursos" class="text-white hover:text-dorado transition">Recursos</a>
+                <a href="#galeria" class="text-white hover:text-dorado transition">Impacto</a>
+                <a href="#contacto" class="bg-verde text-white px-4 py-2 rounded-lg hover:bg-dorado hover:text-tierra transition">Contacto</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Abrir menú">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-tierra-clara border-t border-verde px-4 py-2 space-y-2 text-sm font-titulo font-semibold uppercase">
+            <a href="#inicio" class="block py-2 text-tierra">Inicio</a>
+            <a href="#sobre-proyecto" class="block py-2 text-tierra">Proyecto</a>
+            <a href="#metodologia" class="block py-2 text-tierra">Metodología</a>
+            <a href="#recursos" class="block py-2 text-tierra">Recursos</a>
+            <a href="#galeria" class="block py-2 text-tierra">Impacto</a>
+            <a href="#contacto" class="block py-2 text-verde">Contacto</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero-vector-bg relative overflow-hidden">
+        <svg class="absolute bottom-0 left-0 w-full h-1/2 z-0" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+            <path fill="#2E7D32" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#8C5A2F" fill-opacity="0.2" d="M0,288L48,272C96,256,192,224,288,224C384,224,480,256,576,272C672,288,768,288,864,272C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        
+        <div class="max-w-4xl mx-auto text-center py-32 px-4 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-titulo font-extrabold mb-4 text-tierra tracking-wider fade-in-up">Fisioconciencia Femenina</h1>
+            <p class="text-xl md:text-2xl mb-8 text-verde font-titulo font-semibold fade-in-up">Enfoque anatomofisiológico de la mujer afrocolombiana del Suroccidente de Colombia.</p>
+            <blockquote class="italic text-lg md:text-xl text-dorado mx-auto max-w-2xl mb-10 fade-in-up border-l-4 border-dorado pl-4 text-left">
+                "El conocimiento del cuerpo constituye el primer paso hacia la autonomía, el autocuidado y el bienestar integral de las mujeres".
+            </blockquote>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up">
+                <a href="#sobre-proyecto" class="bg-verde text-white font-titulo font-semibold uppercase tracking-wide py-3 px-8 rounded-lg hover:bg-dorado hover:text-tierra transition shadow-lg">Explorar Proyecto</a>
+                <a href="#recursos" class="bg-dorado text-tierra font-titulo font-semibold uppercase tracking-wide py-3 px-8 rounded-lg hover:bg-white transition shadow-lg">Descargar Materiales</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-blancoroto relative z-10">
+        <div class="max-w-3xl mx-auto px-4 fade-in-up">
+            <div class="border-2 border-dashed border-verde p-8 rounded-xl bg-white shadow-sm">
+                <p class="text-lg leading-relaxed text-piedra text-center">
+                    Estrategia educativa participativa orientada a promover el reconocimiento del cuerpo, el autocuidado y la conexión mente-cuerpo en niñas y adolescentes afrocolombianas, palenqueras y raizales del municipio de Jamundí. Combina el rigor de la salud científica con la riqueza cultural y el enfoque de género.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-20 bg-blancoroto">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="card-focus bg-tierra-clara rounded-xl p-8 border-l-4 border-verde shadow-md fade-in-up">
+                <svg class="w-12 h-12 mx-auto mb-4 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono corazón de salud"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+                <h3 class="text-xl font-titulo font-semibold mb-2 text-center text-tierra">Anatomía y Salud</h3>
+                <p class="text-sm text-center text-piedra">Conocimiento claro sobre el cuerpo femenino y la prevención de enfermedades.</p>
+            </div>
+            <div class="card-focus bg-tierra-clara rounded-xl p-8 border-l-4 border-verde shadow-md fade-in-up">
+                <svg class="w-12 h-12 mx-auto mb-4 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono mente y cuerpo"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path></svg>
+                <h3 class="text-xl font-titulo font-semibold mb-2 text-center text-tierra">Conexión Mente-Cuerpo</h3>
+                <p class="text-sm text-center text-piedra">Prácticas de autocuidado, bienestar emocional y autoestima.</p>
+            </div>
+            <div class="card-focus bg-tierra-clara rounded-xl p-8 border-l-4 border-verde shadow-md fade-in-up">
+                <svg class="w-12 h-12 mx-auto mb-4 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono de comunidad"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>
+                <h3 class="text-xl font-titulo font-semibold mb-2 text-center text-tierra">Identidad Étnica</h3>
+                <p class="text-sm text-center text-piedra">Formación adaptada al contexto diferencial afrodescendiente.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-tierra border-t-4 border-verde py-8">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-around items-center gap-6 text-center">
+            <div class="bg-white rounded-full w-32 h-32 flex items-center justify-center shadow-md border-2 border-verde hover:-translate-y-1 transition">
+                <div><p class="font-titulo font-bold text-tierra text-sm">Universidad</p><p class="text-xs text-piedra">del Valle</p></div>
+            </div>
+            <div class="bg-white rounded-full w-32 h-32 flex items-center justify-center shadow-md border-2 border-verde hover:-translate-y-1 transition">
+                <div><p class="font-titulo font-bold text-tierra text-sm">Medicina</p><p class="text-xs text-piedra">y Cirugía</p></div>
+            </div>
+            <div class="bg-white rounded-full w-32 h-32 flex items-center justify-center shadow-md border-2 border-verde hover:-translate-y-1 transition">
+                <div><p class="font-titulo font-bold text-tierra text-sm">ICETEX</p><p class="text-xs text-piedra">Comunidades Negras</p></div>
+            </div>
+        </div>
+    </div>
+
+    <section id="sobre-proyecto" class="py-24 bg-blancoroto">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-titulo font-bold text-center text-verde mb-12 fade-in-up tracking-wide">Sobre el Proyecto</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16 items-center">
+                <div class="fade-in-up">
+                    <h3 class="text-2xl font-titulo font-bold text-tierra mb-4">Planteamiento del Problema</h3>
+                    <p class="text-piedra leading-relaxed">Las mujeres afrocolombianas enfrentan barreras significativas en el acceso a información en salud, agravadas por mitos y tabúes en torno a la anatomía femenina. Las brechas étnico-raciales limitan el desarrollo de una autonomía corporal informada, haciendo urgente la implementación de estrategias educativas culturalmente pertinentes.</p>
+                    
+                    <div class="mt-8 bg-dorado-palido border-2 border-dashed border-dorado p-6 rounded-3xl shadow-sm relative">
+                        <p class="font-titulo italic text-tierra text-center">
+                            "¿Cómo puede una estrategia educativa basada en el reconocimiento de la anatomía femenina, la conexión mente-cuerpo y la promoción del autocuidado fortalecer el bienestar y la alfabetización en salud de mujeres afrocolombianas, palenqueras y raizales del municipio de Jamundí?"
+                        </p>
+                    </div>
+                </div>
+                <div class="fade-in-up flex justify-center">
+                    <div class="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border-4 border-verde">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Grupo de mujeres jóvenes en un taller educativo" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tierra/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12 fade-in-up">
+                <div>
+                    <h4 class="font-bold text-xl mb-3 text-verde font-titulo">Objetivo General</h4>
+                    <p class="text-piedra">Promover el reconocimiento, la valoración y el cuidado integral del cuerpo femenino mediante el fortalecimiento de conocimientos anatómicos y estrategias mente-cuerpo.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-3 text-verde font-titulo">Objetivos Específicos</h4>
+                    <ul class="space-y-2 text-piedra">
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-verde mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Reconocimiento anatómico.</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-verde mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fortalecimiento de saberes previos.</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-verde mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Conexión mente-cuerpo.</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-verde mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Promoción de hábitos de autocuidado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center fade-in-up">
+                <h4 class="font-bold text-xl mb-6 font-titulo text-tierra">Impacto y ODS</h4>
+                <div class="flex justify-center gap-8 flex-wrap">
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 bg-tierra-clara border-2 border-verde rounded-full flex items-center justify-center text-verde font-titulo font-extrabold text-3xl mb-2 transition group-hover:scale-110 shadow-md">3</div>
+                        <p class="text-sm font-semibold text-piedra">Salud y Bienestar</p>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 bg-tierra-clara border-2 border-verde rounded-full flex items-center justify-center text-verde font-titulo font-extrabold text-3xl mb-2 transition group-hover:scale-110 shadow-md">5</div>
+                        <p class="text-sm font-semibold text-piedra">Igualdad de Género</p>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 bg-tierra-clara border-2 border-verde rounded-full flex items-center justify-center text-verde font-titulo font-extrabold text-3xl mb-2 transition group-hover:scale-110 shadow-md">10</div>
+                        <p class="text-sm font-semibold text-piedra">Reducción de Desigualdades</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodologia" class="py-24 bg-tierra-clara">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-titulo font-bold text-center text-verde mb-12 fade-in-up tracking-wide">Metodología y Fases</h2>
+            
+            <div class="flex flex-wrap justify-center gap-2 mb-8 fade-in-up" id="tabs-container">
+                <button class="tab-btn active bg-verde text-white px-6 py-2 rounded-full text-sm font-titulo font-semibold transition" data-tab="fase1">Fase 1</button>
+                <button class="tab-btn bg-white text-tierra px-6 py-2 rounded-full text-sm font-titulo font-semibold transition hover:bg-dorado" data-tab="fase2">Fase 2</button>
+                <button class="tab-btn bg-white text-tierra px-6 py-2 rounded-full text-sm font-titulo font-semibold transition hover:bg-dorado" data-tab="fase3">Fase 3</button>
+                <button class="tab-btn bg-white text-tierra px-6 py-2 rounded-full text-sm font-titulo font-semibold transition hover:bg-dorado" data-tab="fase4">Fase 4</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden fade-in-up">
+                <div id="tab-content" class="p-8 border-l-4 border-verde min-h-[300px]"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="py-24 bg-blancoroto">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-titulo font-bold text-center text-verde mb-12 fade-in-up tracking-wide">Recursos Descargables</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="envelope-card bg-white rounded-xl p-6 shadow-md border-2 border-verde flex flex-col items-center transform -rotate-2 fade-in-up">
+                    <svg class="w-24 h-24 text-verde mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono de libro botánico niñas">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+                    </svg>
+                    <span class="text-xs font-titulo font-bold uppercase tracking-wide text-verde mb-1">Niñas (5 a 9 años)</span>
+                    <h3 class="text-2xl font-titulo font-bold mb-2 text-tierra text-center">Mi cuerpo, mi tesoro</h3>
+                    <p class="text-piedra mb-6 text-center text-sm">Guía ilustrada sobre partes del cuerpo, autocuidado diario, emociones y prevención de vulneraciones.</p>
+                    <button class="w-full bg-verde text-white font-titulo font-semibold uppercase py-3 rounded-lg hover:bg-dorado hover:text-tierra transition flex items-center justify-center gap-2">
+                        Descargar PDF
+                    </button>
+                </div>
+
+                <div class="envelope-card bg-white rounded-xl p-6 shadow-md border-2 border-verde flex flex-col items-center transform rotate-2 fade-in-up">
+                    <svg class="w-24 h-24 text-dorado mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono de libro botánico adolescentes">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+                    </svg>
+                    <span class="text-xs font-titulo font-bold uppercase tracking-wide text-verde mb-1">Adolescentes (10 a 14 años)</span>
+                    <h3 class="text-2xl font-titulo font-bold mb-2 text-tierra text-center">Conociendo mi cuerpo</h3>
+                    <p class="text-piedra mb-6 text-center text-sm">Guía sobre cambios en la pubertad, ciclo menstrual, higiene, autoestima e identidad afrodescendiente.</p>
+                    <button class="w-full bg-verde text-white font-titulo font-semibold uppercase py-3 rounded-lg hover:bg-dorado hover:text-tierra transition flex items-center justify-center gap-2">
+                        Descargar PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-24 bg-tierra-clara">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-titulo font-bold text-center text-verde mb-16 fade-in-up tracking-wide">Galería e Impacto</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
+                <div class="fade-in-up flex flex-col items-center">
+                    <div class="w-32 h-32 rounded-full bg-white border-2 border-verde flex items-center justify-center shadow-md mb-3">
+                        <span class="text-4xl font-titulo font-extrabold text-verde counter" data-target="150">0</span>
+                    </div>
+                    <p class="text-piedra font-semibold">Mujeres y niñas participantes</p>
+                </div>
+                <div class="fade-in-up flex flex-col items-center">
+                    <div class="w-32 h-32 rounded-full bg-white border-2 border-verde flex items-center justify-center shadow-md mb-3">
+                        <span class="text-4xl font-titulo font-extrabold text-verde counter" data-target="4">0</span>
+                    </div>
+                    <p class="text-piedra font-semibold">Fases metodológicas</p>
+                </div>
+                <div class="fade-in-up flex flex-col items-center">
+                    <div class="w-32 h-32 rounded-full bg-white border-2 border-verde flex items-center justify-center shadow-md mb-3">
+                        <span class="text-4xl font-titulo font-extrabold text-verde counter" data-target="100">0</span><span class="text-xl text-verde">%</span>
+                    </div>
+                    <p class="text-piedra font-semibold">Material adaptado al contexto</p>
+                </div>
+            </div>
+
+            <div class="masonry">
+                <div class="masonry-item rounded-lg overflow-hidden shadow-md group relative cursor-pointer border border-verde">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" alt="Niñas en taller comunitario" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-verde/0 group-hover:bg-verde/20 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 transition font-titulo font-bold flex items-center gap-2 bg-tierra/80 px-4 py-2 rounded-full"><svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Ver más</span>
+                    </div>
+                </div>
+                <div class="masonry-item rounded-lg overflow-hidden shadow-md group relative cursor-pointer border border-verde">
+                    <img src="https://images.unsplash.com/photo-1531219432768-9f540ce0ec55?auto=format&fit=crop&w=600&q=80" alt="Manualidades y arte" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-verde/0 group-hover:bg-verde/20 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 transition font-titulo font-bold flex items-center gap-2 bg-tierra/80 px-4 py-2 rounded-full"><svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Ver más</span>
+                    </div>
+                </div>
+                <div class="masonry-item rounded-lg overflow-hidden shadow-md group relative cursor-pointer border border-verde">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80" alt="Niñas aprendiendo" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-verde/0 group-hover:bg-verde/20 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 transition font-titulo font-bold flex items-center gap-2 bg-tierra/80 px-4 py-2 rounded-full"><svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Ver más</span>
+                    </div>
+                </div>
+                <div class="masonry-item rounded-lg overflow-hidden shadow-md group relative cursor-pointer border border-verde">
+                    <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&q=80" alt="Educación en salud" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-verde/0 group-hover:bg-verde/20 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 transition font-titulo font-bold flex items-center gap-2 bg-tierra/80 px-4 py-2 rounded-full"><svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Ver más</span>
+                    </div>
+                </div>
+                <div class="masonry-item rounded-lg overflow-hidden shadow-md group relative cursor-pointer border border-verde">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Trabajo en grupo" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-verde/0 group-hover:bg-verde/20 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 transition font-titulo font-bold flex items-center gap-2 bg-tierra/80 px-4 py-2 rounded-full"><svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Ver más</span>
+                    </div>
+                </div>
+                <div class="masonry-item rounded-lg overflow-hidden shadow-md group relative cursor-pointer border border-verde">
+                    <img src="https://images.unsplash.com/photo-1525923838299-2db93c2ed202?auto=format&fit=crop&w=600&q=80" alt="Mural comunitario" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-verde/0 group-hover:bg-verde/20 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 transition font-titulo font-bold flex items-center gap-2 bg-tierra/80 px-4 py-2 rounded-full"><svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Ver más</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-tierra text-white pt-16 pb-8 relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-dorado"></div>
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+            <div>
+                <h4 class="text-white font-titulo font-bold text-lg mb-4 border-b border-dorado/50 pb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Ícono libro abierto"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    Créditos
+                </h4>
+                <p class="text-sm leading-relaxed text-blancoroto/90">Proyecto desarrollado por <strong>María Camila Biojo Quiñones</strong>.</p>
+                <p class="text-sm mt-2 text-blancoroto/90">Estudiante de Medicina, Universidad del Valle (Sede San Fernando, Cali).</p>
+            </div>
+            <div>
+                <h4 class="text-white font-titulo font-bold text-lg mb-4 border-b border-dorado/50 pb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Ícono de ubicación"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Ubicación
+                </h4>
+                <p class="text-blancoroto/90">San Isidro, Jamundí<br>Valle del Cauca, Colombia</p>
+            </div>
+            <div>
+                <h4 class="text-white font-titulo font-bold text-lg mb-4 border-b border-dorado/50 pb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Ícono de contacto"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Contacto
+                </h4>
+                <form class="space-y-3">
+                    <input type="text" placeholder="Nombre" aria-label="Nombre" class="w-full bg-blancoroto text-tierra px-4 py-2 rounded border-2 border-verde text-sm focus:outline-none focus:ring-2 focus:ring-dorado">
+                    <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico" class="w-full bg-blancoroto text-tierra px-4 py-2 rounded border-2 border-verde text-sm focus:outline-none focus:ring-2 focus:ring-dorado">
+                    <textarea placeholder="Mensaje" rows="3" aria-label="Mensaje" class="w-full bg-blancoroto text-tierra px-4 py-2 rounded border-2 border-verde text-sm focus:outline-none focus:ring-2 focus:ring-dorado"></textarea>
+                    <button type="button" class="w-full bg-verde hover:bg-dorado hover:text-tierra text-white font-titulo font-semibold py-2 rounded transition text-sm uppercase tracking-wide flex items-center justify-center gap-2">
+                        Enviar Mensaje
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-dorado/30 text-center text-xs text-blancoroto/70">
+            &copy; 2024 FisioConciencia Femenina. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        const phasesData = {
+            fase1: {
+                title: "Fase 1: Planeación y Preparación",
+                content: `
+                    <ul class="space-y-4 text-piedra">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-verde flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono mapa"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                            <span><strong>Mapeo comunitario a pie en San Isidro, Jamundí.</strong> Acercamiento directo con líderes y juntas de acción comunal.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-verde flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono baúl viajero"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            <span><strong>Elaboración de "El baúl viajero":</strong> Diseño y creación de material didáctico de bajo costo (cartulina, tela, papel kraft).</span>
+                        </li>
+                    </ul>
+                `
+            },
+            fase2: {
+                title: "Fase 2: Educación sobre Anatomía Corporal",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-tierra-clara p-4 rounded-lg border border-verde/30">
+                            <h4 class="font-titulo font-bold text-tierra mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono cuerpo"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path></svg>
+                                Niñas (5-9 años)
+                            </h4>
+                            <p class="text-sm text-piedra">Dinámicas como "El cuerpo de trapo" para reconocimiento externo, "Detective de mi cuerpo" con siluetas gigantes, y cuentacuentos con títeres de tela.</p>
+                        </div>
+                        <div class="bg-tierra-clara p-4 rounded-lg border border-verde/30">
+                            <h4 class="font-titulo font-bold text-tierra mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono adolescentes"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path></svg>
+                                Adolescentes (10-14 años)
+                            </h4>
+                            <p class="text-sm text-piedra">Uso de rotafolio de pubertad, buzón de dudas anónimas para resolver tabúes, y creación manual de kits de higiene menstrual.</p>
+                        </div>
+                    </div>
+                `
+            },
+            fase3: {
+                title: "Fase 3: Conexión Mente-Cuerpo y Autocuidado",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-tierra-clara p-4 rounded-lg border border-verde/30">
+                            <h4 class="font-titulo font-bold text-tierra mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono mente-cuerpo"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path></svg>
+                                Niñas
+                            </h4>
+                            <p class="text-sm text-piedra">Ejercicios lúdicos de respiración "La burbuja de jabón", yoga de animalitos para conciencia corporal, y elaboración de amuletos de autoestima.</p>
+                        </div>
+                        <div class="bg-tierra-clara p-4 rounded-lg border border-verde/30">
+                            <h4 class="font-titulo font-bold text-tierra mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono círculo de palabra"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>
+                                Adolescentes
+                            </h4>
+                            <p class="text-sm text-piedra">Círculo de la palabra para compartir vivencias, redacción de cartas al cuerpo, siluetas de afirmaciones y fortalecimiento de la identidad afro.</p>
+                        </div>
+                    </div>
+                `
+            },
+            fase4: {
+                title: "Fase 4: Evaluación y Cierre",
+                content: `
+                    <ul class="space-y-4 text-piedra">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-verde flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono evaluación"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
+                            <span>Aplicación de encuestas antes y después para medir el incremento de conocimientos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-verde flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-label="Ícono mural"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"></path></svg>
+                            <span>Mural colectivo de firmas y foto grupal como registro simbólico de la experiencia.</span>
+                        </li>
+                    </ul>
+                `
+            }
+        };
+
+        const tabContainer = document.getElementById('tabs-container');
+        const tabContent = document.getElementById('tab-content');
+
+        function updateTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if(btn.dataset.tab === tabId) {
+                    btn.classList.add('active', 'bg-verde', 'text-white');
+                    btn.classList.remove('bg-white', 'text-tierra');
+                } else {
+                    btn.classList.remove('active', 'bg-verde', 'text-white');
+                    btn.classList.add('bg-white', 'text-tierra');
+                }
+            });
+
+            const data = phasesData[tabId];
+            tabContent.innerHTML = `<h3 class="text-2xl font-titulo font-bold text-verde mb-6 flex items-center gap-2">${data.title}</h3>${data.content}`;
+        }
+
+        tabContainer.addEventListener('click', (e) => {
+            if(e.target.classList.contains('tab-btn')) {
+                updateTab(e.target.dataset.tab);
+            }
+        });
+
+        updateTab('fase1');
+
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        function animateCounters() {
+            if (animated) return;
+            animated = true;
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = 2000 / target;
+
+                const updateCount = () => {
+                    if (count < target) {
+                        count += 1;
+                        counter.innerText = count;
+                        setTimeout(updateCount, speed);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    if(entry.target.querySelector('.counter')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
